@@ -83,3 +83,11 @@ def get_respons_from_quary(db , query, k=4):
     
     return respons
 ```
+
+### 9. Create the streamlit interface 
+> import the libraries 
+```
+import streamlit as st
+import Langchain_helper as lgc 
+import textwrap
+```
