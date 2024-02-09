@@ -4,3 +4,4 @@ from langchain.llms import openai
 from langchain import PromptTemplate
 from langchain.chains import LLMChain
 from langchain.vectorstores import faiss
+from dotenv import load_dotenv

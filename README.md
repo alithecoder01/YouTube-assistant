@@ -10,7 +10,7 @@
 ### 3. Install requred packeges 
  > pip install langchain openai faiss-cpu streamlit python-dotenv youtube-transcript-api
 
-### 4. Import the laibraries
+### 4. Import the laibraries im Langchain_helper.py
  ```
  from langchain.document_loaders import YoutubeLoader
  from langchain.text_splitter import RecursiveCharacterTextSplitter
@@ -18,4 +18,5 @@
  from langchain import PromptTemplate
  from langchain.chains import LLMChain
  from langchain.vectorstores import faiss
+ from dotenv import load_dotenv
  ```
