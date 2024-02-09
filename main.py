@@ -7,8 +7,8 @@ st.title("Youtube Assistance")
 with st.sidebar:
     with st.form(key='my_form'):
         youtube_url = st.sidebar.text_area(
-            Lable = "What is your youtube url: ",
-            max_chars=50
+            label = "What is your youtube url: ",
+            max_chars=80
         )
         query = st.sidebar.text_area(
             label="Ask about the vide: ",
@@ -22,6 +22,6 @@ with st.sidebar:
 
 if query and youtube_url:
     db = lgc.create_vector_db_from_youTube_url(youtube_url)
-    respons , docs = lgc.get_respons_from_quary(db, query)
+    respons = lgc.get_respons_from_quary(db, query)
     st.subheader("Answer:")
     st.text(textwrap.fill(respons,width= 80))

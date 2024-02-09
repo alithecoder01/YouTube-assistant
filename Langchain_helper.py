@@ -1,6 +1,6 @@
 from langchain_community.document_loaders import YoutubeLoader
 from langchain.text_splitter import RecursiveCharacterTextSplitter
-from langchain_community.llms import openai
+from langchain_openai import OpenAI
 from langchain.prompts import PromptTemplate
 from langchain_openai import OpenAIEmbeddings
 from langchain.chains import LLMChain
@@ -26,14 +26,15 @@ def create_vector_db_from_youTube_url(vid_Url: str) -> FAISS:
     db = FAISS.from_documents(docs,embading)
     return db
 
-def get_respons_from_quary(db , query, k=4):
+def get_respons_from_quary(db , query, k=2):
     # text-davianci can handel only 4000 tokens
 
     docs = db.similarity_search(query, k=k)
     # to compain the 4 pages sp total will be 4000 only
     docs_page_content= " ".join([d.page_content for d in docs])
 
-    llm = openai(model= "text-davianci-003")
+
+    llm = OpenAI(model_name="text-davinci-003")
 
     prmpt = PromptTemplate(
         input_variables=["question","docs"],
