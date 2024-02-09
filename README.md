@@ -6,3 +6,6 @@
 
 ### 2. Activate the .venv
  > source .venv/bin/activate
+
+### 3. Install requred packeges 
+ > pip install langchain openai faiss-cpu streamlit python-dotenv youtube-transcript-api
