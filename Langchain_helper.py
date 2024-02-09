@@ -7,11 +7,11 @@ from langchain.chains import LLMChain
 from langchain_community.vectorstores import FAISS
 from dotenv import load_dotenv
 
+
 load_dotenv()
 
 embading = OpenAIEmbeddings()
 
-url = "https://www.youtube.com/watch?v=lG7Uxts9SXs&t=430s"
 
 # load all the transcipt from the video and splite it into chunks of 1000 only cuz openai can't take more than 1000, and save them as vector
 def create_vector_db_from_youTube_url(vid_Url: str) -> FAISS:
