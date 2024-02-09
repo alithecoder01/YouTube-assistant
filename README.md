@@ -19,4 +19,5 @@
  from langchain.chains import LLMChain
  from langchain.vectorstores import faiss
  from dotenv import load_dotenv
+ from langchain.embeddings.openai import OpenAIEmbeddings
  ```
